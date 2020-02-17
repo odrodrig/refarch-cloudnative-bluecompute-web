@@ -1,0 +1,70 @@
+apiVersion: appsody.dev/v1beta1
+kind: AppsodyApplication
+metadata:
+  annotations:
+    architecture: x86_64
+    authoritative-source-url: registry.access.redhat.com
+    build-date: 2019-10-29T20:35:20.404230
+    commit.image.appsody.dev/author: Fabio Gomez <fabiogomez@us.ibm.com>
+    commit.image.appsody.dev/committer: Fabio Gomez <fabiogomez@us.ibm.com>
+    commit.image.appsody.dev/date: Fri Jun 28 09:42:22 2019 -0500
+    commit.image.appsody.dev/message: '- Removed some test code'
+    description: This image contains the Kabanero development stack for the Nodejs
+      collection
+    distribution-scope: public
+    help: For more information visit https://github.com/sclorg/s2i-nodejs-container
+    image.opencontainers.org/created: "2020-02-16T23:53:59-06:00"
+    image.opencontainers.org/documentation: https://github.com/odrodrig/refarch-cloudnative-bluecompute-web
+    image.opencontainers.org/revision: aae0bd03109071d2cae794f190de42e44aeb726e-modified
+    image.opencontainers.org/source: https://github.com/odrodrig/refarch-cloudnative-bluecompute-web/tree/spring
+    image.opencontainers.org/url: https://github.com/odrodrig/refarch-cloudnative-bluecompute-web
+    k8s.io/description: Node.js 10 available as container is a base platform for building
+      and running various Node.js 10 applications and frameworks. Node.js is a platform
+      built on Chrome's JavaScript runtime for easily building fast, scalable network
+      applications. Node.js uses an event-driven, non-blocking I/O model that makes
+      it lightweight and efficient, perfect for data-intensive real-time applications
+      that run across distributed devices.
+    k8s.io/display-name: Node.js 10
+    maintainer: SoftwareCollections.org <sclorg@redhat.com>
+    name: kabanero/nodejs
+    openshift.io/expose-services: 8080:http
+    openshift.io/tags: builder,nodejs,nodejs10
+    redhat.com/build-host: cpt-1006.osbs.prod.upshift.rdu2.redhat.com
+    redhat.com/component: nodejs-10-container
+    redhat.com/deployments-dir: /opt/app-root/src
+    redhat.com/dev-mode: DEV_MODE:false
+    redhat.com/dev-mode.port: DEBUG_PORT:5858
+    redhat.com/license_terms: https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI
+    release: "54"
+    s2i.io/scripts-url: image:///usr/libexec/s2i
+    s2i.openshift.io/scripts-url: image:///usr/libexec/s2i
+    stack.appsody.dev/configured: docker.io/kabanero/nodejs:0.2
+    stack.appsody.dev/created: 2019-12-13T14:54:03+0000
+    stack.appsody.dev/revision: 7ad65bd9ec95dc9a39fb430a4f56ef63e9026d7f
+    stack.appsody.dev/tag: kabanero/nodejs:0.2.6
+    summary: Image for Kabanero Nodejs development
+    url: https://access.redhat.com/containers/#/registry.access.redhat.com/ubi8/nodejs-10/images/1-54
+    usage: s2i build <SOURCE-REPOSITORY> ubi8/nodejs-10:latest <APP-NAME>
+    vcs-ref: 6ee7553ab2fb0dc20817416392fa6025cd1003c7
+    vcs-type: git
+    vendor: Kabanero
+    version: 0.2.6
+  creationTimestamp: null
+  labels:
+    image.opencontainers.org/title: web
+    stack.appsody.dev/version: 0.2.6
+  name: web
+spec:
+  applicationImage: dev.local/web
+  createKnativeService: false
+  expose: true
+  service:
+    port: 80
+    type: ClusterIP
+  stack: nodejs
+  version: 1.0.0
+  server:
+    port: 80
+    type: ClusterIP
+  pullSecret: ibm-cr-pull-secret
+status: {}
